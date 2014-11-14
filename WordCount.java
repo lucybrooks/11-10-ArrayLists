@@ -30,18 +30,16 @@ public class WordCount
       countUniqueWords(wordList, wordCount, txt);
       
       // print out number of unique words found, like: "Number of unique words: 23"
-      int h=txt.length();
+      int h=wordList.size();
       System.out.println("Number of Unique words: "+h);
       
       System.out.println();
       
-      System.out.println("Count\tWord ");
+      System.out.println("Word\tCount ");
       // for each word in your ArrayList of unique words, print the count followed by a tab and the word
       for(int i=0; i<wordList.size(); i++)
       {
-        int k=0;
-        k = wordList.get(i).length();
-        System.out.println(wordList.set(i, wordList.get(i))+"\t"+k);
+        System.out.println(wordList.get(i)+"\t"+wordCount.get(i));
       }
       
       
@@ -89,10 +87,10 @@ public class WordCount
     {
       String first ="";
       int second=0;
-      if(wordList.get(i).compareTo(wordList.get(i+1))>0)
+      if(wordList.get(i).toLowerCase().compareTo(wordList.get(i+1).toLowerCase())>0)
       {
-        first =wordList.get(i);
-        wordList.set(i, wordList.get(i+1));
+        first =wordList.get(i).toLowerCase();
+        wordList.set(i, wordList.get(i+1).toLowerCase());
         wordList.set(i+1, first);
         
         second=wordCount.get(i);
